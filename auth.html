@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>To Do List - Auth</title>
+  <link rel="stylesheet" href="styles/index.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    .auth-container {
+      width: 100%;
+      max-width: 404px;
+      padding: 24px;
+    }
+    
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+    
+    .auth-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    
+    .auth-toggle {
+      text-align: center;
+      font-size: 14px;
+      color: var(--color-gray-4);
+      margin-top: 16px;
+    }
+    
+    .auth-toggle a {
+      color: var(--color-dark-2);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    
+    .auth-error {
+      color: #d32f2f;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    
+    .auth-success {
+      color: #388e3c;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div id="login-form" class="auth-form">
+      <h1 class="auth-title">Login</h1>
+      
+      <div class="todo__field field">
+        <label class="field__label" for="login-email">Email</label>
+        <input class="field__input" id="login-email" type="email" placeholder=" " autocomplete="email" />
+      </div>
+      
+      <div class="todo__field field">
+        <label class="field__label" for="login-password">Password</label>
+        <input class="field__input" id="login-password" type="password" placeholder=" " autocomplete="current-password" />
+      </div>
+      
+      <button class="button" id="login-submit" type="button">Login</button>
+      
+      <div id="login-error" class="auth-error"></div>
+      
+      <div class="auth-toggle">
+        Don't have an account? <a id="show-register">Register here</a>
+      </div>
+    </div>
+
+    <div id="register-form" class="auth-form" style="display: none;">
+      <h1 class="auth-title">Register</h1>
+      
+      <div class="todo__field field">
+        <label class="field__label" for="register-username">Username</label>
+        <input class="field__input" id="register-username" type="text" placeholder=" " autocomplete="username" />
+      </div>
+      
+      <div class="todo__field field">
+        <label class="field__label" for="register-email">Email</label>
+        <input class="field__input" id="register-email" type="email" placeholder=" " autocomplete="email" />
+      </div>
+      
+      <div class="todo__field field">
+        <label class="field__label" for="register-password">Password</label>
+        <input class="field__input" id="register-password" type="password" placeholder=" " autocomplete="new-password" />
+      </div>
+      
+      <div class="todo__field field">
+        <label class="field__label" for="register-password-confirm">Confirm Password</label>
+        <input class="field__input" id="register-password-confirm" type="password" placeholder=" " autocomplete="new-password" />
+      </div>
+      
+      <button class="button" id="register-submit" type="button">Register</button>
+      
+      <div id="register-error" class="auth-error"></div>
+      <div id="register-success" class="auth-success"></div>
+      
+      <div class="auth-toggle">
+        Already have an account? <a id="show-login">Login here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js" type="module"></script>
+</body>
+</html>
